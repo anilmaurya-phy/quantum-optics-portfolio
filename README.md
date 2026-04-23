@@ -1,71 +1,92 @@
-# Quantum Optics Portfolio
+🧪 INFN Research Project: Quantum Information with Integrated Photonics
 
-This repository contains simulation projects in **quantum optics and quantum information**, focusing on photon-based systems and computational modeling using Python.
+This repository is complemented by experimental research conducted at the Istituto Nazionale di Fisica Nucleare (INFN), focusing on the implementation of a photonic Controlled-NOT (CNOT) gate using integrated silicon photonics.
 
----
-## 🔬 Research Focus
+🔬 Overview
 
-* Photon entanglement and Bell states
-* Quantum interferometry (Mach–Zehnder)
-* Quantum state evolution and measurement
-* Photonic systems and quantum information processing
+The project explores how quantum information processing can be realized using photons as qubits in an integrated photonic platform.
 
----
+Photons are encoded using polarization and manipulated through an on-chip optical circuit consisting of beam splitters, phase shifters, and interferometers.
 
-## 💻 Tools & Libraries
+⚙️ Experimental Architecture
 
-* Python
-* QuTiP (Quantum Toolbox in Python)
-* NumPy
-* Matplotlib
+The system consists of:
 
----
+Photon Source
+Twin photons generated via Spontaneous Parametric Down-Conversion (SPDC)
+State Preparation
+Polarization encoding of computational basis states:
+|00⟩, |01⟩, |10⟩, |11⟩
+Integrated Photonic Circuit
+Silicon chip with:
+Directional couplers (beam splitters)
+Thermo-phase shifters (TPS)
+Interference regions
+Synchronization
+Optical Delay Lines (ODLs) ensure simultaneous photon arrival
+Detection System
+Single-photon detectors (SNSPDs) + coincidence measurements (TDC)
+🔄 Operational Flow
+SPDC Source → State Preparation → Photonic CNOT Circuit → Detection
+⚛️ CNOT Gate Operation
+✔ Single-Photon Regime
+Inputs: |00⟩, |01⟩
+No quantum interference required
+Deterministic propagation
+High fidelity observed
+✔ Two-Photon Interference Regime
+Inputs: |10⟩, |11⟩
+Requires Hong–Ou–Mandel interference
+Quantum interference at beam splitters
 
-## 📁 Projects
+For indistinguishable photons:
 
-### 🔹 1. Entanglement Simulation
+|1⟩ₐ |1⟩ᵦ → (|2⟩ₐ |0⟩ᵦ + |0⟩ₐ |2⟩ᵦ) / √2
 
-* Simulation of Bell states
-* Density matrix construction
-* Von Neumann entropy calculation
-* Verification of quantum entanglement
+➡ Leads to suppression of coincidence counts (HOM dip)
 
-### 🔹 2. Interferometer Simulation
+📊 Experimental Observations
+✔ High fidelity (>95%) for |00⟩, |01⟩
+⚠ Reduced fidelity for |10⟩, |11⟩
+❌ Weak or absent HOM interference in early runs
+Strong sensitivity to:
+Phase stability (TPS)
+Optical delay alignment
+Photon indistinguishability
+⚠️ Limiting Factor: Photon Source
 
-* Beam splitter transformations
-* Phase shift implementation
-* Interference pattern analysis
-* Mach–Zehnder interferometer model
+The main limitation is the single-photon source:
 
----
+g²(0) < 0.01 → confirms single-photon regime
+No HOM dip → photons are distinguishable
+Irregular photon spectrum observed
+Temporal jitter and spectral mismatch
 
-## 📊 Planned Extensions
+➡ The photonic circuit works correctly, but imperfect photons limit quantum interference
 
-* Decoherence and noise modeling
-* Bell inequality violation tests
-* Hong–Ou–Mandel interference simulation
-* Photonic quantum circuit simulation
+🔧 Current Work
+Improving photon indistinguishability (spectral + temporal overlap)
+Stabilizing thermo-phase shifters (TPS)
+Fine-tuning optical delay lines (ODLs)
+Collaboration with Aurea Technology for source optimization
+🎯 Research Significance
 
----
+This project demonstrates the bridge between quantum information theory and real experimental systems:
 
-## 🎯 Objective
+Quantum gates depend critically on physical parameters
+Photon indistinguishability is essential for quantum computation
+Integrated photonics enables scalable quantum technologies
+🔗 Connection to This Repository
 
-To develop a strong computational and theoretical foundation in **quantum optics**, with applications in:
+The simulations in this repository (entanglement, interferometers, etc.) are directly related to the experimental work:
 
-* Quantum communication
-* Photonic quantum computing
-* Quantum information theory
+Interferometer simulation → models beam splitter physics
+Entanglement simulation → relates to photon correlations
+Future work → includes HOM interference simulation
+🚀 Next Step
 
----
+Planned extension:
 
-## 👤 Author
-
-**Anil Maurya**
-MSc Physics – University of Camerino
-Research: Quantum optics, photonics, quantum information
-
----
-
-## 🔗 Future Work
-
-This repository will be expanded with advanced simulations and research-oriented projects relevant to quantum technologies.
+🔥 Simulation of Hong–Ou–Mandel interference
+Photonic quantum circuit modeling
+Noise and decoherence analysis

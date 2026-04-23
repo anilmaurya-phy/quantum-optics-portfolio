@@ -1,11 +1,8 @@
-# quantum-optics-portfolio
-Quantum information and Quantum optics simulations including photon entanglement, interferometry, and photonic systems using Python (QuTiP)
 # Quantum Optics Portfolio
 
 This repository contains simulation projects in **quantum optics and quantum information**, focusing on photon-based systems and computational modeling using Python.
 
 ---
-
 ## 🔬 Research Focus
 
 * Photon entanglement and Bell states
